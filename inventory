@@ -4,6 +4,12 @@ ansible_become=yes
 ansible_become_method=sudo
 ansible_python_interpreter= '/usr/bin/python3'
 
+[localhost]
+ansible_host=localhost
+ansible_connection=local
+AWX_COLLECTIONS_ENABLED = true
+AWX_ROLES_ENABLED = true
+
 [mediahub_ws_servers]
 mediahub-ws-01
 mediahub-ws-02
