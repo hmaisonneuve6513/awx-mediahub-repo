@@ -4,6 +4,8 @@
 - name: Install Mediahub WS Servers application and dependencies
   hosts: all
   gather_facts: false
+  AWX_COLLECTIONS_ENABLED: true
+  AWX_ROLES_ENABLED: true
   roles:
 #    - ffmpeg
 #    - java
