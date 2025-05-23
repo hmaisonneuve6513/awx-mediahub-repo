@@ -1,0 +1,14 @@
+[all:vars]
+ansible_user='herve'
+ansible_become=yes
+ansible_become_method=sudo
+ansible_python_interpreter= '/usr/bin/python3'
+
+[mediahub_ws_servers]
+mediahub-ws-01
+mediahub-ws-02
+mediahub-ws-03
+mediahub-ws-04
+
+[mediahub-ws-packer-servers]
+mediahub-ws-packager-05

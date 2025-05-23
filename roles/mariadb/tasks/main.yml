@@ -1,0 +1,33 @@
+---
+# This playbook installs and configures a mariadb server on the mediahub server.
+- name: MariaDB Server Installation
+  apt:
+      name: mariadb-server
+      state: present
+ 
+- name: Ensure MariaDB Server is at the latest version
+  apt:
+      name: mariadb-server
+      state: latest
+ 
+- name: Ensure that MariaDB Server is started
+  service:
+      name: mariadb
+      state: started
+
+- name: Create Mediahub DB
+  community.mysql.mysql_db:
+      name: media_hub
+      login_user: ansible_user
+      login_password: "{{ ansible_user_password }}"
+      state: present
+
+- name: Create the media_hub_user
+  community.mysql.mysql_user:
+    name: media_hub_user
+    password: "{{ db_password }}"
+    login_user: ansible_user
+    login_password: "{{ ansible_user_password }}"
+    login_host: localhost
+    priv: 'media_hub.*:ALL,GRANT'
+    state: present
