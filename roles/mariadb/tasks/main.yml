@@ -25,3 +25,11 @@
     state: present
     login_unix_socket: /run/mysqld/mysqld.sock
 
+- name: Create the media_hub_user
+  mysql_user:
+    name: media_hub_user
+    password: "Medi@Hub1234"
+    priv: "media_hub.*:ALL"
+    state: present
+    login_unix_socket: /run/mysqld/mysqld.sock
+
