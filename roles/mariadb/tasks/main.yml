@@ -18,16 +18,12 @@
 - name: Create Mediahub DB
   community.mysql.mysql_db:
       name: media_hub
-      login_user: ansible_user
-      login_password: "{{ ansible_user_password }}"
       state: present
 
 - name: Create the media_hub_user
   community.mysql.mysql_user:
     name: media_hub_user
     password: "{{ db_password }}"
-    login_user: ansible_user
-    login_password: "{{ ansible_user_password }}"
     login_host: localhost
     priv: 'media_hub.*:ALL,GRANT'
     state: present
