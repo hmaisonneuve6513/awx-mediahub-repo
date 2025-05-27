@@ -23,19 +23,3 @@
       name: mariadb
       state: started
 
-- name: Switch to the root user
-  shell: sudo mysql
-
-- name: Create Mediahub DB
-  community.mysql.mysql_db:
-      name: media_hub
-      state: present
-
-- name: Create the media_hub_user
-  community.mysql.mysql_user:
-    name: media_hub_user
-    login_user: root
-    password: "{{ db_password }}"
-    login_host: localhost
-    priv: 'media_hub.*:ALL,GRANT'
-    state: present
