@@ -19,3 +19,11 @@
       name: mariadb
       state: started
 
+- name: Switch to the root user
+  shell: sudo mysql
+
+- name: Create the mediahub database
+  mysql_db:
+    name: mediahub
+    state: present
+
