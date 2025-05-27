@@ -23,4 +23,5 @@
   mysql_db:
     name: media_hub
     state: present
+    login_unix_socket: /run/mysqld/mysqld.sock
 
