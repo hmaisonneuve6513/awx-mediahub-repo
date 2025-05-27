@@ -23,9 +23,12 @@
       name: mariadb
       state: started
 
+- name: Switch to the root user
+  ansible.builtin.shell: |
+    sudo mysql
+
 - name: Create Mediahub DB
   community.mysql.mysql_db:
-      login_user: root
       name: media_hub
       state: present
 
