@@ -6,11 +6,7 @@
   ansible.builtin.apt:
       name: mariadb-server
       state: present
- 
-- name: Ensure MariaDB Server is at the latest version
-  apt:
-      name: mariadb-server
-      state: latest
+      update_cache: yes
 
 - name: Ensure the python library for MySQL is installed
   apt:
