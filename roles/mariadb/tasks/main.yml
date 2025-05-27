@@ -23,17 +23,16 @@
       name: mariadb
       state: started
 
-- name: Change to root
-  ansible.builtin.command: sudo mysql
-
 - name: Create Mediahub DB
   community.mysql.mysql_db:
+      login_user: root
       name: media_hub
       state: present
 
 - name: Create the media_hub_user
   community.mysql.mysql_user:
     name: media_hub_user
+    login_user: root
     password: "{{ db_password }}"
     login_host: localhost
     priv: 'media_hub.*:ALL,GRANT'
