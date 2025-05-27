@@ -16,6 +16,6 @@
  
 - name: Ensure that MariaDB Server is started
   service:
-      name: mariadb
+      name: mariadbd
       state: started
 
