@@ -12,7 +12,7 @@
  
 - name: Ensure that MariaDB Server is started
   service:
-      name: mariadb
+      name: mariadb-server
       state: started
 
 - name: Create Mediahub DB
