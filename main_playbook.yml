@@ -2,7 +2,7 @@
 # It includes the roles for ffmpeg, java, mariadb, mediahub, shaka-packager, and tsduck.
 ---
 - name: Install Mediahub WS Servers application and dependencies
-  hosts: mediahub_ws_servers
+  hosts: sandbox_servers
   gather_facts: false
   roles:
 #    - ffmpeg
