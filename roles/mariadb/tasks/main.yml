@@ -1,5 +1,11 @@
 ---
 # This playbook installs and configures a mariadb server upon mediahub-ws servers.
+- name: Ensure the python library for MySQL is installed
+  apt:
+    name: python3-pymysql
+    state: present
+    update_cache: yes
+
 - name: MariaDB Server Installation
   apt:
       name: mariadb-server
