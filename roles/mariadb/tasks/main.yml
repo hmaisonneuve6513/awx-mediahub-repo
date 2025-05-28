@@ -1,6 +1,7 @@
 ---
-# This playbook installs and configures a mariadb server upon mediahub-ws servers.
-
+# This role installs and configures mariadb server upon mediahub-ws servers.
+# It creates a database named media_hub and a user named media_hub_user.
+# The all tables and base records will be created by media_hub webservice application.
 
 - name: MariaDB Server Installation
   ansible.builtin.apt:
