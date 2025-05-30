@@ -31,14 +31,8 @@
     name: media_hub_user
     password: "Medi@Hub1234"
     host: localhost
+    priv: 'media_hub.*:ALL'
     state: present
     login_unix_socket: /run/mysqld/mysqld.sock
 
-- name: Grant privileges to media_hub_user
-  mysql_privs:
-    user: media_hub_user
-    host: localhost
-    priv: 'media_hub.*:ALL'
-    state: present
- #   login_unix_socket: /run/mysqld/mysqld.sock
 
