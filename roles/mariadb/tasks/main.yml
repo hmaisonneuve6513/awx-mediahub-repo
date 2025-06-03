@@ -24,7 +24,7 @@
   mysql_user:
     name: snow-mediahub-user
     password: "SNUser@Mediahub1234"
-    host: 192.168.122.*
+    host: 192.168.122.%
     priv: '*.*:ALL'
     state: present
     login_unix_socket: /run/mysqld/mysqld.sock
