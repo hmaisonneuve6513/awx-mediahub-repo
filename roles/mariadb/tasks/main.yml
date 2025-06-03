@@ -20,6 +20,15 @@
       name: mariadb
       state: started
 
+- name: Create the snow-user
+  mysql_user:
+    name: snow-mediahub-user
+    password: "SNUser@Mediahub1234"
+    host: localhost
+    priv: '*.*:ALL'
+    state: present
+    login_unix_socket: /run/mysqld/mysqld.sock
+
 - name: Create the media_hub database
   mysql_db:
     name: media_hub
